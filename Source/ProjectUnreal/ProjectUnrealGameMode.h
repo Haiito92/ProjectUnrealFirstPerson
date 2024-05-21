@@ -13,6 +13,7 @@ class AProjectUnrealGameMode : public AGameModeBase
 
 public:
 	AProjectUnrealGameMode();
+	
 };
 
 
