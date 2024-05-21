@@ -23,11 +23,11 @@ AProjectUnrealCharacter::AProjectUnrealCharacter()
 		
 	// Don't rotate when the controller rotates. Let that just affect the camera.
 	bUseControllerRotationPitch = false;
-	bUseControllerRotationYaw = false;
+	bUseControllerRotationYaw = true;
 	bUseControllerRotationRoll = false;
 
 	// Configure character movement
-	GetCharacterMovement()->bOrientRotationToMovement = true; // Character moves in the direction of input...	
+	GetCharacterMovement()->bOrientRotationToMovement = false; // Character moves in the direction of input...	(not)
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 500.0f, 0.0f); // ...at this rotation rate
 
 	// Note: For faster iteration times these variables, and many more, can be tweaked in the Character Blueprint
@@ -41,10 +41,10 @@ AProjectUnrealCharacter::AProjectUnrealCharacter()
 
 	// Create a camera boom (pulls in towards the player if there is a collision)
 
-	FirstPersonCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
-	FirstPersonCameraComponent->SetupAttachment(GetCapsuleComponent());
-	FirstPersonCameraComponent->SetRelativeLocation(FVector(-10.f, 0.f, 60.f)); // Position the camera
-	FirstPersonCameraComponent->bUsePawnControlRotation = true;
+	FirstPersonCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
+	FirstPersonCamera->SetupAttachment(GetCapsuleComponent());
+	FirstPersonCamera->SetRelativeLocation(FVector(-10.f, 0.f, 60.f)); // Position the camera
+	FirstPersonCamera->bUsePawnControlRotation = true;
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
@@ -119,6 +119,12 @@ void AProjectUnrealCharacter::Look(const FInputActionValue& Value)
 
 	if (Controller != nullptr)
 	{
+		const FRotator cameraRotation = FirstPersonCamera->GetRelativeRotation();
+		// const FRotator capsuleRotation = GetCapsuleComponent()->GetRelativeRotation();
+		// GetCapsuleComponent()->SetRelativeRotation(FRotator(capsuleRotation.Pitch, cameraRotation.Yaw, capsuleRotation.Roll));
+		
+		// FirstPersonCamera->SetRelativeRotation(FRotator(FMath::Clamp(cameraRotation.Pitch + LookAxisVector.Y, -80, 80), cameraRotation.Yaw, cameraRotation.Roll));
+		
 		// add yaw and pitch input to controller
 		AddControllerYawInput(LookAxisVector.X);
 		AddControllerPitchInput(LookAxisVector.Y);
