@@ -40,6 +40,11 @@ class AProjectUnrealCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* LookAction;
 
+	UPROPERTY(EditAnywhere, Category = Variables)
+	float MinCameraPitch = -75;
+	UPROPERTY(EditAnywhere, Category = Variables)
+	float MaxCameraPitch = 80;
+
 public:
 	AProjectUnrealCharacter();
 	
