@@ -5,7 +5,6 @@
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/Controller.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
@@ -121,12 +120,6 @@ void AProjectUnrealCharacter::Look(const FInputActionValue& Value)
 
 	if (Controller != nullptr)
 	{
-		const FRotator cameraRotation = FirstPersonCamera->GetRelativeRotation();
-		// const FRotator capsuleRotation = GetCapsuleComponent()->GetRelativeRotation();
-		// GetCapsuleComponent()->SetRelativeRotation(FRotator(capsuleRotation.Pitch, cameraRotation.Yaw, capsuleRotation.Roll));
-		
-		// FirstPersonCamera->SetRelativeRotation(FRotator(FMath::Clamp(cameraRotation.Pitch + LookAxisVector.Y, -80, 80), cameraRotation.Yaw, cameraRotation.Roll));
-		
 		// add yaw and pitch input to controller
 		AddControllerYawInput(LookAxisVector.X);
 		AddControllerPitchInput(LookAxisVector.Y);
