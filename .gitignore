@@ -52,9 +52,9 @@ SourceArt/**/*.tga
 Binaries/*
 !Binaries/Win64
 Binaries/Win64/*
-!Binaries/Win64/UnrealEditor-ProjectUnreal.dll
-!Binaries/Win64/ProjectUnrealEditor.target
-!Binaries/Win64/UnrealEditor.modules
+!Binaries/Win64/UnrealEditor-ApexProject.dll
+!Binaries/Win64/ApexProjectEditor.target
+!Binaries/Win64/ApexProject.modules
 
 Plugins/*/Binaries/*
 
