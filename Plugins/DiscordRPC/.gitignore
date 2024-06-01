@@ -152,7 +152,7 @@ Binaries/Win64/*
 !Binaries/Win64/UnrealEditor-DiscordRpc.dll
 !Binaries/Win64/UnrealEditor.modules
 
-
+!Source/ThirdParty/DiscordRpcLibrary/Win64/*
 
 
 Plugins/*/Binaries/*
