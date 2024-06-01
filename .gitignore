@@ -54,7 +54,7 @@ Binaries/*
 Binaries/Win64/*
 !Binaries/Win64/UnrealEditor-ApexProject.dll
 !Binaries/Win64/ApexProjectEditor.target
-!Binaries/Win64/ApexProject.modules
+!Binaries/Win64/UnrealEditor.modules
 
 Plugins/*/Binaries/*
 
