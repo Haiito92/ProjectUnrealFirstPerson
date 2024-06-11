@@ -2,6 +2,6 @@
 	"BuildId": "27405482",
 	"Modules": 
 	{
-		"ApexProject": "UnrealEditor-ApexProject.dll"
+		"SOAR": "UnrealEditor-SOAR.dll"
 	}
 }

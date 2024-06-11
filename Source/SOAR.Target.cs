@@ -3,13 +3,13 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class ApexProjectTarget : TargetRules
+public class SOARTarget : TargetRules
 {
-	public ApexProjectTarget(TargetInfo Target) : base(Target)
+	public SOARTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V4;
 
-		ExtraModuleNames.AddRange( new string[] { "ApexProject" } );
+		ExtraModuleNames.AddRange( new string[] { "SOAR" } );
 	}
 }

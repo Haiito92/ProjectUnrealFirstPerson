@@ -3,13 +3,13 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class ApexProjectEditorTarget : TargetRules
+public class SOAREditorTarget : TargetRules
 {
-	public ApexProjectEditorTarget(TargetInfo Target) : base(Target)
+	public SOAREditorTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V4;
 
-		ExtraModuleNames.AddRange( new string[] { "ApexProject" } );
+		ExtraModuleNames.AddRange( new string[] { "SOAR" } );
 	}
 }

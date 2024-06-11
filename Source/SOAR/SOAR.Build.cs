@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class ApexProject : ModuleRules
+public class SOAR : ModuleRules
 {
-	public ApexProject(ReadOnlyTargetRules Target) : base(Target)
+	public SOAR(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
